@@ -2,8 +2,7 @@ use std::io::{self, BufRead};
 use crate::record::SamRecord;
 
 /// Parses a single line of a SAM file (non-header) into a SamRecord.
-/// Returns `Ok(Some(SamRecord))` if successful, `Ok(None)` if the line is a header or blank,
-/// or `Err` if parsing fails.
+/// filters headers
 fn parse_line(line: &str) -> Option<SamRecord> {
     if line.starts_with('@') || line.trim().is_empty() {
         return None;

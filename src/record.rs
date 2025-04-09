@@ -1,4 +1,4 @@
-use std::io::{self, BufRead};
+
 #[derive(Debug, Default, Clone, PartialEq, Eq)]
 
 pub struct SamRecord {
@@ -17,6 +17,8 @@ pub struct SamRecord {
 
 
 impl SamRecord {
+
+    //creates SamRecord from a line
     pub fn from_line(line: &str) -> Option<Self> {
         let parts: Vec<&str> = line.trim().split('\t').collect();
         if parts.len() < 11 {
@@ -25,7 +27,7 @@ impl SamRecord {
 
         Some(Self {
             qname: parts[0].to_string(),
-            flag: parts[1].parse().ok()?,
+            flag: parts[1].parse().ok()?, //might fail, ok() turns a Result into an Option
             rname: parts[2].to_string(),
             pos: parts[3].parse().ok()?,
             mapq: parts[4].parse().ok()?,
