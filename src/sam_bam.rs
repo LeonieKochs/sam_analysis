@@ -1,5 +1,5 @@
 // Umwandlung von sam zu bam und visa verca
-use std::path::Path;
+/*use std::path::Path;
 use rust_htslib::bam::{self, Format, Header, Reader, Writer};
 
 pub fn sam_to_bam(input_sam: &str, output_bam: &str) -> Result<(), Box<dyn std::error::Error>> {
@@ -21,4 +21,4 @@ pub fn sam_to_bam(input_sam: &str, output_bam: &str) -> Result<(), Box<dyn std::
     println!("Successfully converted {} to {}", input_sam, output_bam);
 
     Ok(())
-}
+}*/
