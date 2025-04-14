@@ -15,7 +15,6 @@ pub struct SamRecord {
     pub qual: String,
 }
 
-
 impl SamRecord {
 
     //creates SamRecord from a line
